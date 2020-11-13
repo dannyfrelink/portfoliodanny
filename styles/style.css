@@ -47,23 +47,23 @@ nav .animation {
 }
 nav .start-overmij, 
 a:first-of-type:hover~.animation {
-    width: 4em;
+    width: 4.1em;
     left: 0.5em;
 }
 a:first-of-type {
     width: 5em;
 }
-nav .start-projecten, 
+nav .start-portfolio, 
 a:nth-of-type(2):hover~.animation {
-    width: 4.6em;
-    left: 5.2em;
+    width: 4.2em;
+    left: 5.4em;
 }
 a:nth-of-type(2) {
     width: 5em;
 }
 nav .start-contact, 
 a:last-of-type:hover~.animation {
-    width: 4em;
+    width: 4.1em;
     left: 10.5em;
 }
 a:last-of-type {
@@ -135,11 +135,19 @@ main>article img#profielfoto {
     border-radius: 25vw;
     box-shadow: black 0.05em 0.05em 0.5em;
 }
+main>article a {
+    text-decoration: none;
+    font-size: 1.2em;
+    color: black;
+    border: 2px solid black;
+    border-radius: 10vw;
+    padding: 0.7em;
+}
 main>section {
     z-index: 2;
     position: relative;
     width: 100vw;
-    margin-top: 22em;
+    margin-top: 25em;
     padding-bottom: 0.5em;
     background-color: white;
 }
@@ -181,13 +189,13 @@ main>section article ul {
 }
 
 
-/* Projecten pagina */
-.projecten {
+/* portfolio pagina */
+.portfolio {
     overflow-x: scroll;
     overflow-y: hidden;
     /* background-color: azure; */
 }
-.projecten main {
+.portfolio main {
     overflow-x: scroll;
     overflow-y: hidden;
     height: 100vh;
@@ -195,14 +203,14 @@ main>section article ul {
     display: flex;
     align-items: center;
 }
-.projecten main article {
+.portfolio main article {
     position: relative;
     left: 90vw;
     height: 64.5vw;
     max-height: 32.1em;
     padding: 0;
 }
-.projecten main>article {
+.portfolio main>article {
     position: fixed;
     left: 0;
     top: 32.4vh;
@@ -213,11 +221,11 @@ main>section article ul {
     padding: 0;
     transition: 300ms ease-in;
 }
-.projecten main>article.uitfaden {
+.portfolio main>article.uitfaden {
     opacity: 0;
     transition: 500ms ease-out;
 }
-.projecten main>section {
+.portfolio main>section {
     display: flex;
     background: none;
     overflow-x: scroll;
@@ -227,27 +235,27 @@ main>section article ul {
     margin-top: 0;
     padding-bottom: 0;
 }
-.projecten main>section article {
+.portfolio main>section article {
     margin: 0 2.5em 0 0;
     width: 110vw;
 }
-/* .projecten main>article:last-of-type {
+/* .portfolio main>article:last-of-type {
     width: 64.5vw;
     height: 32.1em;
     background-color: rgb(243, 243, 243);
 } */
-.projecten main>article h1 {
+.portfolio main>article h1 {
     width: 75vw;
     margin: 0.5em 0 0.4em;
     font-size: 1.9em;
     font-weight: normal;
 }
-.projecten main>article p {
+.portfolio main>article p {
     padding: 0;
     text-align: left;
     font-style: italic;
 }
-.projecten main>section article img {
+.portfolio main>section article img {
     height: 64.5vw;
     width: auto;
     max-height: 32.1em;
@@ -255,10 +263,10 @@ main>section article ul {
     object-position: 50% 50%; */
     border: 1px solid grey;
 }
-/* #projecten main>article:first-of-type img {
+/* #portfolio main>article:first-of-type img {
     object-position: 0 0;
 } */
-.projecten main>section article img:hover {
+.portfolio main>section article img:hover {
     opacity: 0.4;
     transition: 500ms;
     transform: scale(1.05);
