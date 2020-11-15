@@ -1,7 +1,7 @@
 
 var skillsOvermij = document.querySelector('main>section>div');
-var contentProjecten = document.querySelector('.projecten main>article');
-var mainProjecten = document.querySelector('.projecten main>section');
+var contentPortfolio = document.querySelector('.portfolio main>article');
+var mainPortfolio = document.querySelector('.portfolio main>section');
 
 
 function contentSkillsWeergeven () {
@@ -14,28 +14,28 @@ function contentSkillsWeergeven () {
         skillsOvermij.classList.remove('infadenSection');
     }
 }
-function tekstProjectenUitfaden () {
-    var scrollX = mainProjecten.scrollLeft;
+function tekstPortfolioUitfaden () {
+    var scrollX = mainPortfolio.scrollLeft;
 
     if (window.screen.width >= 768) {
         if (scrollX >= 400) {
-            contentProjecten.classList.add('uitfaden');
+            contentPortfolio.classList.add('uitfaden');
         }
         else {
-            contentProjecten.classList.remove('uitfaden');
+            contentPortfolio.classList.remove('uitfaden');
         }
     }
     else {
         if (scrollX >= 30) {
-            contentProjecten.classList.add('uitfaden');
+            contentPortfolio.classList.add('uitfaden');
         }
         else {
-            contentProjecten.classList.remove('uitfaden');
+            contentPortfolio.classList.remove('uitfaden');
         }
     }
 }
 
 
 window.addEventListener('scroll', contentSkillsWeergeven);
-mainProjecten.addEventListener('scroll', tekstProjectenUitfaden);
+mainPortfolio.addEventListener('scroll', tekstPortfolioUitfaden);
 

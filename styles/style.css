@@ -110,7 +110,6 @@ main>article {
     top: 2.3em;
     width: 87vw;
     margin: 0 6.5vw;
-    z-index: -1;
 }
 main>article p {
     text-align: right;
@@ -191,17 +190,17 @@ main>section article ul {
 
 /* portfolio pagina */
 .portfolio {
-    overflow-x: scroll;
+    /* overflow-x: scroll; */
     overflow-y: hidden;
     /* background-color: azure; */
 }
 .portfolio main {
-    overflow-x: scroll;
-    overflow-y: hidden;
+    /* overflow-x: scroll;
+    overflow-y: hidden; */
     height: 100vh;
     width: 100vw;
-    display: flex;
-    align-items: center;
+    /* display: flex;
+    align-items: center; */
 }
 .portfolio main article {
     position: relative;
@@ -227,11 +226,13 @@ main>section article ul {
 }
 .portfolio main>section {
     display: flex;
+    align-items: center;
     background: none;
     overflow-x: scroll;
     overflow-y: hidden;
     z-index: 1;
-    width: 100vw;
+    height: 100vh;
+    width: auto;
     margin-top: 0;
     padding-bottom: 0;
 }
@@ -263,9 +264,9 @@ main>section article ul {
     object-position: 50% 50%; */
     border: 1px solid grey;
 }
-/* #portfolio main>article:first-of-type img {
-    object-position: 0 0;
-} */
+.portfolio main>section article:last-of-type img {
+    margin-right: 100vw;
+}
 .portfolio main>section article img:hover {
     opacity: 0.4;
     transition: 500ms;
