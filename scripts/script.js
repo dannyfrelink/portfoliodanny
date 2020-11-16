@@ -1,9 +1,15 @@
 
+// Over mij pagina
 var skillsOvermij = document.querySelector('main>section>div');
-var contentPortfolio = document.querySelector('.portfolio main>article');
+var pijlScroll = document.querySelector('main>img');
+
+// Portfolio pagina
+var contentPortfolioIntro = document.querySelector('.portfolio main>article:first-of-type');
+var contentPortfolioOutro = document.querySelector('.portfolio main>article:nth-of-type(2)')
 var mainPortfolio = document.querySelector('.portfolio main>section');
 
 
+// Over mij pagina
 function contentSkillsWeergeven () {
     var scrollY = window.scrollY;
 
@@ -14,28 +20,65 @@ function contentSkillsWeergeven () {
         skillsOvermij.classList.remove('infadenSection');
     }
 }
+function pijlUitfaden () {
+    var scrollY = window.scrollY;
+
+    if (scrollY >=10) {
+        pijlScroll.classList.add('pijlUitfaden');
+    }
+    else {
+        pijlScroll.classList.remove('pijlUitfaden');
+    }
+}
+
+// Portfolio pagina
 function tekstPortfolioUitfaden () {
     var scrollX = mainPortfolio.scrollLeft;
 
     if (window.screen.width >= 768) {
         if (scrollX >= 400) {
-            contentPortfolio.classList.add('uitfaden');
+            contentPortfolioIntro.classList.add('tekstUitfaden');
         }
         else {
-            contentPortfolio.classList.remove('uitfaden');
+            contentPortfolioIntro.classList.remove('tekstUitfaden');
         }
     }
     else {
         if (scrollX >= 30) {
-            contentPortfolio.classList.add('uitfaden');
+            contentPortfolioIntro.classList.add('tekstUitfaden');
         }
         else {
-            contentPortfolio.classList.remove('uitfaden');
+            contentPortfolioIntro.classList.remove('tekstUitfaden');
+        }
+    }
+}
+function tekstPortfolioInfaden () {
+    var scrollX = mainPortfolio.scrollLeft;
+
+    if (window.screen.width >= 768) {
+        if (scrollX >= 5600) {
+            contentPortfolioOutro.classList.add('tekstInfaden');
+        }
+        else {
+            contentPortfolioOutro.classList.remove('tekstInfaden');
+        }
+    }
+    else {
+        if (scrollX >= 2050) {
+            contentPortfolioOutro.classList.add('tekstInfaden');
+        }
+        else {
+            contentPortfolioOutro.classList.remove('tekstInfaden');
         }
     }
 }
 
 
+// Over mij pagina
 window.addEventListener('scroll', contentSkillsWeergeven);
+window.addEventListener('scroll', pijlUitfaden);
+
+// Portfolio pagina
 mainPortfolio.addEventListener('scroll', tekstPortfolioUitfaden);
+mainPortfolio.addEventListener('scroll', tekstPortfolioInfaden);
 

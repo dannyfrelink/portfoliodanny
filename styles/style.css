@@ -15,7 +15,7 @@ body {
 
 /* Navigatie menu */
 header {
-    z-index: 1;
+    z-index: 2;
     position: fixed;
     top: 0;
     width: 100vw;
@@ -46,27 +46,27 @@ nav .animation {
     transition: all 0.5s ease 0s;
 }
 nav .start-overmij, 
-a:first-of-type:hover~.animation {
+nav a:first-of-type:hover~.animation {
     width: 4.1em;
     left: 0.5em;
 }
-a:first-of-type {
+nav a:first-of-type {
     width: 5em;
 }
 nav .start-portfolio, 
-a:nth-of-type(2):hover~.animation {
+nav a:nth-of-type(2):hover~.animation {
     width: 4.2em;
     left: 5.4em;
 }
-a:nth-of-type(2) {
+nav a:nth-of-type(2) {
     width: 5em;
 }
 nav .start-contact, 
-a:last-of-type:hover~.animation {
+nav a:last-of-type:hover~.animation {
     width: 4.1em;
     left: 10.5em;
 }
-a:last-of-type {
+nav a:last-of-type {
     width: 5em;
 }
 
@@ -119,6 +119,9 @@ main>article p:first-of-type {
     margin-top: 0;
     padding-top: 9.7em;
 }
+main>article p:last-of-type {
+    margin-bottom: 1.5em;
+}
 main>article img#profielfoto {
     animation-name: fotoVergrootInfaden;
     animation-duration: 1.5s;
@@ -136,17 +139,19 @@ main>article img#profielfoto {
 }
 main>article a {
     text-decoration: none;
-    font-size: 1.2em;
+    font-size: 6vw;
+    /* font-size: 1.2em; */
     color: black;
-    border: 2px solid black;
+    border: 0.6vw solid black;
     border-radius: 10vw;
-    padding: 0.7em;
+    padding: 0.5em;
+    margin-left: 22.6vw;
 }
 main>section {
     z-index: 2;
     position: relative;
     width: 100vw;
-    margin-top: 25em;
+    margin-top: 25.5em;
     padding-bottom: 0.5em;
     background-color: white;
 }
@@ -187,6 +192,35 @@ main>section article ul {
     margin: 0;
 }
 
+@keyframes pijlBewegen{
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(1em);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+main>img {
+    animation-name: pijlBewegen;
+    animation-duration: 1.5s;
+    animation-delay: 2.5s;
+    position: absolute;
+    width: 2.2em;
+    height: auto;
+    top: 91vh;
+    left: calc(50vw - 1.1em);
+    z-index: 5;
+    opacity: 0.7;
+    transition: 150ms ease-in;
+}
+main>img.pijlUitfaden {
+    opacity: 0;
+    transition: 150ms ease-out;
+}
+
 
 /* portfolio pagina */
 .portfolio {
@@ -220,9 +254,20 @@ main>section article ul {
     padding: 0;
     transition: 300ms ease-in;
 }
-.portfolio main>article.uitfaden {
+.portfolio main>article.tekstUitfaden {
     opacity: 0;
     transition: 500ms ease-out;
+}
+.portfolio main>article h1 {
+    width: 75vw;
+    margin: 0.5em 0 0.4em;
+    font-size: 1.9em;
+    font-weight: normal;
+}
+.portfolio main>article p {
+    padding: 0;
+    text-align: left;
+    font-style: italic;
 }
 .portfolio main>section {
     display: flex;
@@ -239,22 +284,12 @@ main>section article ul {
 .portfolio main>section article {
     margin: 0 2.5em 0 0;
     width: 110vw;
+    background-color: rgb(243, 243, 243)
 }
-/* .portfolio main>article:last-of-type {
-    width: 64.5vw;
-    height: 32.1em;
-    background-color: rgb(243, 243, 243);
-} */
-.portfolio main>article h1 {
-    width: 75vw;
-    margin: 0.5em 0 0.4em;
-    font-size: 1.9em;
-    font-weight: normal;
-}
-.portfolio main>article p {
-    padding: 0;
-    text-align: left;
-    font-style: italic;
+.portfolio main> section article:last-of-type {
+    margin: 0;
+    width: 100vw;
+    max-width: 52em;
 }
 .portfolio main>section article img {
     height: 64.5vw;
@@ -262,7 +297,7 @@ main>section article ul {
     max-height: 32.1em;
     /* object-fit: cover;
     object-position: 50% 50%; */
-    border: 1px solid grey;
+    border: 1px solid grey;;
 }
 .portfolio main>section article:last-of-type img {
     margin-right: 100vw;
@@ -271,6 +306,14 @@ main>section article ul {
     opacity: 0.4;
     transition: 500ms;
     transform: scale(1.05);
+}
+.portfolio main>article:nth-of-type(2) {
+    opacity: 0;
+    transition: 300ms ease-out;
+}
+.portfolio main>article:nth-of-type(2).tekstInfaden {
+    opacity: 1;
+    transition: 500ms ease-in;
 }
 
 
