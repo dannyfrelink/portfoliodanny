@@ -2,6 +2,36 @@
     box-sizing:border-box;  
 }
 
+/* Scrollbars wegwerken */
+body {
+    position: relative;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+body::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+}
+
+section::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+}
+section {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+div::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+}
+div {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+
 html {
     overflow-x: hidden;
 }
@@ -19,6 +49,7 @@ header {
     position: fixed;
     top: 0;
     width: 100vw;
+    background-color: rgb(243, 243, 243);
 }
 nav {
     position: relative;
@@ -49,6 +80,7 @@ nav .start-overmij,
 nav a:first-of-type:hover~.animation {
     width: 4.1em;
     left: 0.5em;
+    bottom: 0.2em;
 }
 nav a:first-of-type {
     width: 5em;
@@ -57,6 +89,7 @@ nav .start-portfolio,
 nav a:nth-of-type(2):hover~.animation {
     width: 4.2em;
     left: 5.4em;
+    bottom: 0.2em;
 }
 nav a:nth-of-type(2) {
     width: 5em;
@@ -65,6 +98,7 @@ nav .start-contact,
 nav a:last-of-type:hover~.animation {
     width: 4.1em;
     left: 10.5em;
+    bottom: 0.2em;
 }
 nav a:last-of-type {
     width: 5em;
@@ -83,25 +117,6 @@ nav a:last-of-type {
         -webkit-transform: scale(1);
         -moz-transform: scale(1);
     }
-}
-
-body {
-    position: relative;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-}
-body::-webkit-scrollbar {
-    width: 0;
-    background: transparent;
-}
-
-section::-webkit-scrollbar {
-    width: 0;
-    background: transparent;
-}
-section {
-  scrollbar-width: none;
-  -ms-overflow-style: none;
 }
 
 main>article {
@@ -210,7 +225,7 @@ main>img {
     position: absolute;
     width: 2.2em;
     height: auto;
-    top: 91vh;
+    top: 85vh;
     left: calc(50vw - 1.1em);
     z-index: 5;
     opacity: 0.7;
@@ -280,11 +295,19 @@ main>img.pijlUitfaden {
     width: auto;
     margin-top: 0;
     padding-bottom: 0;
+    scroll-behavior: smooth;
 }
 .portfolio main>section article {
-    margin: 0 2.5em 0 0;
+    display: block;
+    margin: 0;
+    /* padding-right: 2.5em; */
     width: 110vw;
+    max-width: 54em;
     background-color: rgb(243, 243, 243)
+}
+.portfolio main>section article div {
+    opacity: 0;
+    display: block;
 }
 .portfolio main> section article:last-of-type {
     margin: 0;
@@ -303,7 +326,6 @@ main>img.pijlUitfaden {
     margin-right: 100vw;
 }
 .portfolio main>section article img:hover {
-    opacity: 0.4;
     transition: 500ms;
     transform: scale(1.05);
 }
@@ -315,6 +337,79 @@ main>img.pijlUitfaden {
     opacity: 1;
     transition: 500ms ease-in;
 }
+
+
+
+body .openProject,
+html .openProject {
+    overflow-y: scroll;
+    width: 100vw;
+}
+.portfolio main>section.openProject {
+    overflow-x: hidden;
+    overflow-y: initial;
+}
+.portfolio main>section article.openProject {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    height: 100%;
+    max-height: 100%;
+    width: 100vw;
+    max-width: 100vw;
+    padding: 0;
+    background-color: rgb(243, 243, 243);
+    transition: 600ms;
+}
+.portfolio main>section article.openProject>img {
+    border: none;
+    width: 87vw;
+    height: auto;
+    margin: 6.7em 0 0 6.5vw;
+    /* margin-top: 6.7em; */
+    /* position: absolute;
+    top: 0; */
+}
+.portfolio main>section article.openProject img:hover {
+    transform: none;
+}
+.portfolio main>section article.openProject div {
+    opacity: 1;
+    display: block;
+    width: 87vw;
+    margin: 1em auto;
+    transition: 2s;
+}
+.portfolio main>section article.openProject div h2 {
+    font-style: normal;
+    font-weight: bold;
+}
+.portfolio main>section article.openProject div h3 {
+    font-style: italic;
+    text-decoration: underline;
+    font-weight: normal;
+    margin-bottom: 0;
+}
+.portfolio main>section article.openProject div p:not(:first-of-type) {
+    margin-top: 0;
+}
+.portfolio main>section article:nth-of-type(2).openProject div p:nth-of-type(2){
+    margin-top: auto;
+}
+.portfolio main>section article.openProject div div {
+    overflow-x: scroll;
+    display: flex;
+}
+.portfolio main>section article.openProject div div img {
+    width: 80vw;
+    height: 100%;
+    border: none;
+    margin-right: 3.5vw;
+}
+/* .portfolio main>section article.openProject div div img:first-of-type {
+    margin-right: 3.5vw;
+} */
 
 
 /* Contact pagina */

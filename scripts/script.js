@@ -1,3 +1,5 @@
+var bodyElement = document.querySelector('body');
+var htmlElement = document.querySelector('html');
 
 // Over mij pagina
 var skillsOvermij = document.querySelector('main>section>div');
@@ -6,7 +8,12 @@ var pijlScroll = document.querySelector('main>img');
 // Portfolio pagina
 var contentPortfolioIntro = document.querySelector('.portfolio main>article:first-of-type');
 var contentPortfolioOutro = document.querySelector('.portfolio main>article:nth-of-type(2)')
-var mainPortfolio = document.querySelector('.portfolio main>section');
+var sectionPortfolio = document.querySelector('.portfolio main>section');
+
+var laysArticle = document.querySelector('.portfolio main>section article:first-of-type');
+var laysArticleImg = document.querySelector('.portfolio main>section article:first-of-type img');
+var tripplannerArticle = document.querySelector('.portfolio main>section article:nth-of-type(2)');
+var tripplannerArticleImg = document.querySelector('.portfolio main>section article:nth-of-type(2) img');
 
 
 // Over mij pagina
@@ -31,9 +38,10 @@ function pijlUitfaden () {
     }
 }
 
+
 // Portfolio pagina
 function tekstPortfolioUitfaden () {
-    var scrollX = mainPortfolio.scrollLeft;
+    var scrollX = sectionPortfolio.scrollLeft;
 
     if (window.screen.width >= 768) {
         if (scrollX >= 400) {
@@ -53,7 +61,7 @@ function tekstPortfolioUitfaden () {
     }
 }
 function tekstPortfolioInfaden () {
-    var scrollX = mainPortfolio.scrollLeft;
+    var scrollX = sectionPortfolio.scrollLeft;
 
     if (window.screen.width >= 768) {
         if (scrollX >= 5600) {
@@ -64,7 +72,7 @@ function tekstPortfolioInfaden () {
         }
     }
     else {
-        if (scrollX >= 2050) {
+        if (scrollX >= 2000) {
             contentPortfolioOutro.classList.add('tekstInfaden');
         }
         else {
@@ -73,12 +81,32 @@ function tekstPortfolioInfaden () {
     }
 }
 
+function laysArticleUitklappen () {
+    bodyElement.classList.add('openProject');
+    htmlElement.classList.add('openProject');
+    sectionPortfolio.classList.add('openProject');
+    laysArticle.classList.add('openProject');
+
+    sectionPortfolio.scroll(0, 0);
+}
+function tripplannerArticleUitklappen () {
+    bodyElement.classList.add('openProject');
+    htmlElement.classList.add('openProject');
+    sectionPortfolio.classList.add('openProject');
+    tripplannerArticle.classList.add('openProject');
+
+    sectionPortfolio.scroll(0, 0);
+}
+
 
 // Over mij pagina
 window.addEventListener('scroll', contentSkillsWeergeven);
 window.addEventListener('scroll', pijlUitfaden);
 
 // Portfolio pagina
-mainPortfolio.addEventListener('scroll', tekstPortfolioUitfaden);
-mainPortfolio.addEventListener('scroll', tekstPortfolioInfaden);
+sectionPortfolio.addEventListener('scroll', tekstPortfolioUitfaden);
+sectionPortfolio.addEventListener('scroll', tekstPortfolioInfaden);
+
+laysArticleImg.addEventListener('click', laysArticleUitklappen);
+tripplannerArticleImg.addEventListener('click', tripplannerArticleUitklappen);
 
