@@ -72,7 +72,7 @@ function tekstPortfolioInfaden () {
         }
     }
     else {
-        if (scrollX >= 2000) {
+        if (scrollX >= 1950) {
             contentPortfolioOutro.classList.add('tekstInfaden');
         }
         else {
