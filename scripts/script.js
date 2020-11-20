@@ -14,6 +14,12 @@ var laysArticle = document.querySelector('.portfolio main>section article:first-
 var laysArticleImg = document.querySelector('.portfolio main>section article:first-of-type img');
 var tripplannerArticle = document.querySelector('.portfolio main>section article:nth-of-type(2)');
 var tripplannerArticleImg = document.querySelector('.portfolio main>section article:nth-of-type(2) img');
+var bonusArticle = document.querySelector('.portfolio main>section article:nth-of-type(3)');
+var bonusArticleImg = document.querySelector('.portfolio main>section article:nth-of-type(3) img');
+var artisArticle = document.querySelector('.portfolio main>section article:nth-of-type(4)');
+var artisArticleImg = document.querySelector('.portfolio main>section article:nth-of-type(4) img');
+var boterhamArticle = document.querySelector('.portfolio main>section article:nth-of-type(5)');
+var boterhamArticleImg = document.querySelector('.portfolio main>section article:nth-of-type(5) img');
 
 
 // Over mij pagina
@@ -97,6 +103,30 @@ function tripplannerArticleUitklappen () {
 
     sectionPortfolio.scroll(0, 0);
 }
+function bonusArticleUitklappen () {
+    bodyElement.classList.add('openProject');
+    htmlElement.classList.add('openProject');
+    sectionPortfolio.classList.add('openProject');
+    bonusArticle.classList.add('openProject');
+
+    sectionPortfolio.scroll(0, 0);
+}
+function artisArticleUitklappen () {
+    bodyElement.classList.add('openProject');
+    htmlElement.classList.add('openProject');
+    sectionPortfolio.classList.add('openProject');
+    artisArticle.classList.add('openProject');
+
+    sectionPortfolio.scroll(0, 0);
+}
+function boterhamArticleUitklappen () {
+    bodyElement.classList.add('openProject');
+    htmlElement.classList.add('openProject');
+    sectionPortfolio.classList.add('openProject');
+    boterhamArticle.classList.add('openProject');
+
+    sectionPortfolio.scroll(0, 0);
+}
 
 
 // Over mij pagina
@@ -109,4 +139,6 @@ sectionPortfolio.addEventListener('scroll', tekstPortfolioInfaden);
 
 laysArticleImg.addEventListener('click', laysArticleUitklappen);
 tripplannerArticleImg.addEventListener('click', tripplannerArticleUitklappen);
-
+bonusArticleImg.addEventListener('click', bonusArticleUitklappen);
+artisArticleImg.addEventListener('click', artisArticleUitklappen);
+boterhamArticleImg.addEventListener('click', boterhamArticleUitklappen);

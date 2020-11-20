@@ -295,7 +295,7 @@ main>img.pijlUitfaden {
     width: auto;
     margin-top: 0;
     padding-bottom: 0;
-    /* scroll-behavior: smooth; */
+    scroll-behavior: smooth;
 }
 .portfolio main>section article {
     display: block;
@@ -308,6 +308,9 @@ main>img.pijlUitfaden {
 .portfolio main>section article div {
     opacity: 0;
     display: block;
+}
+.portfolio main>section article div h2 {
+    width: 110vw;
 }
 .portfolio main> section article:last-of-type {
     margin: 0;
@@ -337,7 +340,20 @@ main>img.pijlUitfaden {
     opacity: 1;
     transition: 500ms ease-in;
 }
-
+.portfolio main>article:nth-of-type(2) div h2 {
+    width: 75vw;
+    margin: 0.5em 0 0.4em;
+    font-size: 1.9em;
+    font-weight: normal;
+}
+/* .portfolio main>article:nth-of-type(2) div p a {
+    font-size: inherit;
+    display: inline-block;
+    border: none;
+    padding: 0;
+    margin: 0;
+    text-decoration: underline;
+} */
 
 
 body .openProject,
@@ -384,6 +400,7 @@ html .openProject {
 .portfolio main>section article.openProject div h2 {
     font-style: normal;
     font-weight: bold;
+    width: 87vw;
 }
 .portfolio main>section article.openProject div h3 {
     font-style: italic;
@@ -403,6 +420,9 @@ html .openProject {
     height: 100%;
     border: none;
     margin-right: 3.5vw;
+}
+.portfolio main>section article:nth-of-type(5).openProject div div img {
+    width: 87vw;
 }
 /* .portfolio main>section article.openProject div div img:first-of-type {
     margin-right: 3.5vw;
