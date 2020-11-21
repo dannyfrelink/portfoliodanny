@@ -119,6 +119,9 @@ nav a:last-of-type {
     }
 }
 
+main {
+    position: relative;
+}
 main>article {
     padding: 0 0.3em;
     position: fixed;
@@ -225,7 +228,7 @@ main>img {
     position: absolute;
     width: 2.2em;
     height: auto;
-    top: 25.5em;
+    top: 10vh;
     left: calc(50vw - 1.1em);
     z-index: 5;
     opacity: 0.7;
